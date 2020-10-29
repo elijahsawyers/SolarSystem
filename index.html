@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <!-- TITLE -->
+  <title>AY 101-001 Creative Project</title>
+  <!-- /TITLE -->
+
+  <!-- META -->
+  <meta name="description" content="The HTML5 Herald">
+  <meta name="author" content="SitePoint">
+  <meta charset="utf-8">
+  <!-- /META -->
+
+  <!-- STYLES -->
+  <link rel="stylesheet" href="css/styles.css">
+  <link href="https://fonts.googleapis.com/css2?family=Acme&display=swap" rel="stylesheet">
+  <!-- /STYLES -->
+</head>
+<body>
+  <!-- MENU -->
+  <div id="menu-container">
+    <h1 id="title">The Solar System</h1>
+    <div id="menu">
+      <div id="button-container">
+        <div class="button selected">Speed</div>
+        <div class="button">Size</div>
+        <div class="button">Distance</div>
+      </div>
+      <div id="slidecontainer">
+        <input type="range" min="10" max="500" value="100" class="slider" id="speed-slider">
+      </div>
+      <hr>
+      <div class="text-block">
+        <p>Welcome to The Solar System website!</p>
+        <p>The purpose of this website is to provide all visitors with a basic understanding of our Solar System.</p>
+        <p>This website contains facts about the orbital speeds of our planets, the size of the Sun and our planets, and the distance between each planet!</p>
+      </div>
+      <hr>
+      <div id="orbital-speeds" class="text-block">
+        <p>At this scale, Earth takes roughly <span id="earth-speed">3.65</span> seconds to completely orbit the Sun, and Neptune roughly <span id="neptune-speed">10</span> minutes!</p>
+        <p>In actuality, it takes Earth one year to complete an orbital period, and Neptune takes around 165 years!</p>
+        <p>NOTE: Orbits are not actually circular, they're elliptical; circles are used for orbital speed demonstration purposes.</p>
+      </div>
+    </div>
+  </div>
+  <!-- /MENU -->
+
+  <!-- ASTRONOMICAL OBJECT CONTAINER -->
+  <div id="astronomical-container">
+    <div id="sun" class="planet"></div>
+    <div id="mercury" class="planet"></div>
+    <div id="venus" class="planet"></div>
+    <div id="earth" class="planet"></div>
+    <div id="mars" class="planet"></div>
+    <div id="jupiter" class="planet"></div>
+    <div id="saturn" class="planet"><div id="rings"></div></div>
+    <div id="uranus" class="planet"></div>
+    <div id="neptune" class="planet"></div>
+  </div>
+  <!-- /ASTRONOMICAL OBJECT CONTAINER -->
+
+  <!-- SCRIPTS -->
+  <script src="js/main.js"></script>
+  <!-- /SCRIPTS -->
+</body>
+</html>

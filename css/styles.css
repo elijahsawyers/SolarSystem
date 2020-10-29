@@ -1,0 +1,217 @@
+/*==================================================
+ BOILERPLATE
+ ==================================================*/
+body, html {
+  margin: 0;
+  height: 100%;
+  overflow: hidden;
+}
+
+body {
+  background: radial-gradient(
+    ellipse at bottom,
+    #1B2735 0%,
+    #090A0F 100%
+  );
+}
+
+/*==================================================
+ MENU
+ ==================================================*/
+#title {
+  position: absolute;
+  margin: 0;
+  left: 25px;
+  top: 25px;
+  z-index: 4;
+  font-size: 3.5vw;
+  font-family: 'Acme', cursive;
+  color: #fff;
+}
+
+#menu-container {
+  z-index: 2;
+  height: 100vh;
+  width: 25%;
+}
+
+#menu {
+  position: absolute;
+  top: 15%;
+  left: 25px;
+  height: 80%;
+  width: 22.5%;
+  background: #fff;
+  border: 5px solid #555;
+  border-radius: 10px;
+  z-index: 4;
+}
+
+#menu .button {
+  width: 25%;
+  height: 40px;
+  line-height: 40px;
+  text-align: center;
+  font-family: 'Acme', cursive;
+  margin-left: 5%;
+  background: #fff;
+  border: 2px solid #0394fc;
+  color: #0394fc;
+  border-radius: 10px;
+  display: inline-block;
+  transition: 0.2s;
+}
+
+#menu .button:hover {
+  background: #0394fc;
+  color: #fff;
+  cursor: pointer;
+}
+
+#menu .button.selected {
+  background: #0394fc;
+  color: #fff;
+}
+
+#button-container {
+  margin: 25px 0;
+}
+
+#slidecontainer {
+  width: 80%;
+  margin: 0 auto;
+  margin-bottom: 25px;
+}
+
+.slider {
+  -webkit-appearance: none;
+  width: 100%;
+  height: 25px;
+  background: #d3d3d3;
+  outline: none;
+  opacity: 0.7;
+  -webkit-transition: .2s;
+  transition: opacity .2s;
+}
+
+.slider:hover {
+  opacity: 1;
+}
+
+.slider::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 25px;
+  height: 25px;
+  background: #0394fc;
+  cursor: pointer;
+}
+
+.slider::-moz-range-thumb {
+  width: 25px;
+  height: 25px;
+  background: #0394fc;
+  cursor: pointer;
+}
+
+#menu hr {
+  width: 100%;
+  border: 1px solid #555;
+}
+
+#menu .text-block {
+  width: 100%;
+  box-sizing: border-box;
+  margin: 25px 0;
+  padding: 0 20px;
+  font-family: 'Acme', cursive;
+}
+
+/*==================================================
+ ASTRONOMICAL OBJECTS
+ ==================================================*/
+#astronomical-container {
+  margin: 0;
+  margin-left: 25%;
+  width: 75%;
+  height: 100vh;
+  z-index: 2;
+}
+
+.star {
+  position: absolute;
+  left: 0px;
+  top: 0px;
+  z-index: 1;
+  background: #fff;
+}
+
+.orbit-path {
+  position: absolute;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.planet {
+  position: absolute;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  z-index: 3;
+}
+
+#sun {
+  background: #ffff00;
+  box-shadow: 0px 0px 30px 0px #ffdd80;
+}
+
+#mercury {
+  background: #aaa;
+}
+
+#venus {
+  background: #dc7a3b;
+}
+
+#earth {
+  background: #0065d6;
+}
+
+#mars {
+  background: #dc4f3b;
+}
+
+#jupiter {
+  background: #f6c17d;
+}
+
+#saturn {
+  background: #ecc99c;
+}
+
+#rings {
+  width: 150%;
+  height: 15%;
+  margin-top: 45%;
+  margin-left: -25%;
+  background: #f5b342;
+  border-radius: 50%;
+  transform: rotate(-45deg);
+}
+
+#uranus {
+  background: #ceeefb;
+}
+
+#neptune {
+  background: #002dd6;
+}
+
+/*==================================================
+ ANIMATIONS
+ ==================================================*/
+
+@keyframes fade-in {
+  0%   {opacity:   0%;}
+  100% {opacity: 100%;}
+}
