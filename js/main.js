@@ -21,6 +21,7 @@ window.onload = () => {
   let menuButtons = document.getElementsByClassName("button");
   let speedText = document.getElementById("speed-text");
   let sizeText = document.getElementById("size-text");
+  let distanceText = document.getElementById("distance-text");
   let midPoint = { x: container.clientWidth / 2 + container.offsetLeft, y: container.clientHeight / 2 };
   let planetPadding = (((container.clientHeight / 2) - (PLANET_SIZE * NUM_PLANETS)) / 7);
   let sun, mercury, venus, earth, mars, jupiter, saturn, uranus, neptune;
@@ -50,6 +51,7 @@ window.onload = () => {
           initSize();
           break;
         case 2:
+          initDistance();
           break;
       }
     }
@@ -59,6 +61,20 @@ window.onload = () => {
   Display state methods
   ==================================================*/
 
+  let createArrow = (left, top) => {
+    let arrow = document.createElement("div");
+    arrow.classList.add("arrow");
+    arrow.style.left = left + "px";
+    arrow.style.top = top + "px";
+    let leftEl = document.createElement("div");
+    leftEl.classList.add("left");
+    let rightEl = document.createElement("div");
+    rightEl.classList.add("right");
+    arrow.append(leftEl);
+    arrow.append(rightEl);
+    return arrow;
+  };
+
   let initSpeed = () => {
     if (currentButtonSelected == 0) { return; }
     let orbitPaths = document.getElementsByClassName("orbit-path");
@@ -67,6 +83,7 @@ window.onload = () => {
     while(arrows.length) { arrows[0].remove(); }
     speedSlider.classList.remove("no-display");
     sizeText.classList.add("no-display");
+    distanceText.classList.add("no-display");
     speedText.classList.remove("no-display");
     sun.setSize(15, 15);
     mercury.setSize(15, 15);
@@ -102,9 +119,12 @@ window.onload = () => {
   let initSize = () => {
     let orbitPaths = document.getElementsByClassName("orbit-path");
     for (let i = 0; i < orbitPaths.length; i++) { orbitPaths[i].classList.add("hidden"); }
+    let arrows = document.getElementsByClassName("arrow");
+    while(arrows.length) { arrows[0].remove(); }
     speedSlider.classList.add("no-display");
     window.clearInterval(speedInterval);
     speedText.classList.add("no-display");
+    distanceText.classList.add("no-display");
     sizeText.classList.remove("no-display");
     sun.setSize(864, 864); sun.setPosition(window.innerWidth - 150, midPoint.y - (864 / 2));
     mercury.setSize(3.03, 3.03); mercury.setPosition(window.innerWidth - (50 * 4), midPoint.y - (3.03 / 2));
@@ -115,30 +135,48 @@ window.onload = () => {
     saturn.setSize(72.37, 72.37); saturn.setPosition(window.innerWidth - (50 * 9) - (86.89 + 72.37), midPoint.y - (72.37 / 2));
     uranus.setSize(31.52, 31.52); uranus.setPosition(window.innerWidth - (50 * 10) - (86.89 + 72.37 + 31.52), midPoint.y - (31.52 / 2));
     neptune.setSize(30.60, 30.60); neptune.setPosition(window.innerWidth - (50 * 11) - (86.89 + 72.37 + 31.52 + 30.60), midPoint.y - (30.60 / 2));
-
-    let createArrow = (left, top) => {
-      let arrow = document.createElement("div");
-      arrow.classList.add("arrow");
-      arrow.style.left = left + "px";
-      arrow.style.top = top + "px";
-      let leftEl = document.createElement("div");
-      leftEl.classList.add("left");
-      let rightEl = document.createElement("div");
-      rightEl.classList.add("right");
-      arrow.append(leftEl);
-      arrow.append(rightEl);
-      return arrow;
-    };
     container.append(createArrow(window.innerWidth - (50 * 4), midPoint.y - (3.03 / 2) - 45));
     container.append(createArrow(window.innerWidth - (50 * 5), midPoint.y - (7.52 / 2) - 45));
     container.append(createArrow(window.innerWidth - (50 * 6), midPoint.y - (7.92 / 2) - 45));
     container.append(createArrow(window.innerWidth - (50 * 7), midPoint.y - (4.21 / 2) - 45));
-
     currentButtonSelected = 1;
   };
 
   let initDistance = () => {
-
+    let orbitPaths = document.getElementsByClassName("orbit-path");
+    for (let i = 0; i < orbitPaths.length; i++) { orbitPaths[i].classList.add("hidden"); }
+    let arrows = document.getElementsByClassName("arrow");
+    while(arrows.length) { arrows[0].remove(); }
+    speedSlider.classList.add("no-display");
+    sizeText.classList.add("no-display");
+    speedText.classList.add("no-display");
+    distanceText.classList.remove("no-display");
+    window.clearInterval(speedInterval);
+    sun.setSize(5, 5);
+    mercury.setSize(5, 5);
+    venus.setSize(5, 5);
+    earth.setSize(5, 5);
+    mars.setSize(5, 5);
+    jupiter.setSize(5, 5);
+    saturn.setSize(5, 5);
+    uranus.setSize(5, 5);
+    neptune.setSize(5, 5);
+    let au = 27.5;
+    let startingX = 100 + window.innerWidth - container.clientWidth;
+    sun.setPosition(startingX, midPoint.y);
+    mercury.setPosition(startingX + (au * 0.31), midPoint.y);
+    venus.setPosition(startingX + (au * 0.72), midPoint.y);
+    earth.setPosition(startingX + au, midPoint.y);
+    mars.setPosition(startingX + (au * 1.44), midPoint.y);
+    jupiter.setPosition(startingX + (au * 5.12), midPoint.y);
+    saturn.setPosition(startingX + (au * 9.98), midPoint.y);
+    uranus.setPosition(startingX + (au * 19.7), midPoint.y);
+    neptune.setPosition(startingX + (au * 29.92), midPoint.y);
+    container.append(createArrow(startingX + (au * 5.12), midPoint.y - 42.5));
+    container.append(createArrow(startingX + (au * 9.98), midPoint.y - 42.5));
+    container.append(createArrow(startingX + (au * 19.7), midPoint.y - 42.5));
+    container.append(createArrow(startingX + (au * 29.92), midPoint.y - 42.5));
+    currentButtonSelected = 2;
   };
 
   /*==================================================
