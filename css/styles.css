@@ -15,6 +15,14 @@ body {
   );
 }
 
+.hidden {
+  opacity: 0;
+}
+
+.no-display {
+  display: none;
+}
+
 /*==================================================
  MENU
  ==================================================*/
@@ -45,6 +53,7 @@ body {
   border: 5px solid #555;
   border-radius: 10px;
   z-index: 4;
+  overflow: scroll;
 }
 
 #menu .button {
@@ -150,6 +159,7 @@ body {
   position: absolute;
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.25);
+  transition: 1s;
 }
 
 .planet {
@@ -205,6 +215,36 @@ body {
 
 #neptune {
   background: #002dd6;
+}
+
+/*==================================================
+ Arrow
+ ==================================================*/
+.arrow {
+  margin: 0 auto;
+  width: 5px;
+  height: 40px;
+  background: red;
+  border-radius: 5px;
+  position: absolute;
+  z-index: 4;
+}
+
+.left, .right {
+  margin: 0 auto;
+  width: 5px;
+  height: 20px;
+  background: red;
+  border-radius: 5px;
+  position: absolute;
+}
+
+.left {
+  transform: rotate(-45deg) translate(-20px, 10px);
+}
+
+.right {
+  transform: rotate(45deg) translate(20px, 10px);
 }
 
 /*==================================================
