@@ -159,7 +159,6 @@ body {
   position: absolute;
   z-index: 2;
   border: 1px solid rgba(255, 255, 255, 0.25);
-  transition: 1s;
 }
 
 .planet {
@@ -253,5 +252,11 @@ body {
 
 @keyframes fade-in {
   0%   {opacity:   0%;}
+  100% {opacity: 100%;}
+}
+
+@keyframes fade-out-in {
+  0%   {opacity: 100%;}
+  50%  {opacity:   0%;}
   100% {opacity: 100%;}
 }
