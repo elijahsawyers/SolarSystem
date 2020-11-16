@@ -1,6 +1,10 @@
 # The Solar System
 > A website all about The Solar System!
 
+<p align="center">
+  <img width="400" height="400" src="https://raw.githubusercontent.com/elijahsawyers/SolarSystem/master/preview.png" />
+</p>
+
 This repository contains my AY 101 Creative Project.
 
 The goal of this project was to give viewers a better understanding of The Solar System. This website contains three different, fundamental facts
